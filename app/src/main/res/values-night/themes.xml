@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HelpTheBird" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">#4698A3</item>
+        <item name="colorAccent">@color/white</item>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="AlertDialogButtons">
+        <!-- Positive button text color -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <!-- Negative button text color -->
+        <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+    <!-- Style for Positive Button -->
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Style for Negative Button -->
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
