@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean status = false;
     private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         buttonStart = findViewById(R.id.buttonStart);
 
-        animation = AnimationUtils.loadAnimation(MainActivity.this,R.anim.scale_anim);
+        animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale_anim);
         bird.setAnimation(animation);
         enemy1.setAnimation(animation);
         enemy2.setAnimation(animation);
         enemy3.setAnimation(animation);
         coin.setAnimation(animation);
-
-
 
 
     }
@@ -56,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
         Log.v("On Resume", "On Resume");
         super.onResume();
 
-        mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.game_audio);
+        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.game_audio);
         mediaPlayer.start();
 
         volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!status){
-                    mediaPlayer.setVolume(0,0);
+                if (!status) {
+                    mediaPlayer.setVolume(0, 0);
                     volume.setImageResource(R.drawable.baseline_volume_off_24);
                     status = true;
-                }else{
-                    mediaPlayer.setVolume(1,1);
+                } else {
+                    mediaPlayer.setVolume(1, 1);
                     volume.setImageResource(R.drawable.baseline_volume_up_24);
                     status = false;
                 }
@@ -79,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mediaPlayer.reset();
                 volume.setImageResource(R.drawable.baseline_volume_up_24);
-
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                Intent intent = new Intent(MainActivity.this, InstructionsActivity.class);
                 startActivity(intent);
             }
         });
@@ -92,16 +90,15 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
 
 
-
         volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!status){
-                    mediaPlayer.setVolume(0,0);
+                if (!status) {
+                    mediaPlayer.setVolume(0, 0);
                     volume.setImageResource(R.drawable.baseline_volume_off_24);
                     status = true;
-                }else{
-                    mediaPlayer.setVolume(1,1);
+                } else {
+                    mediaPlayer.setVolume(1, 1);
                     volume.setImageResource(R.drawable.baseline_volume_up_24);
                     status = false;
                 }
@@ -110,10 +107,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mediaPlayer.setVolume(0,0);
+        mediaPlayer.setVolume(0, 0);
     }
 }
